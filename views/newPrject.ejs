@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <form action="/serarchUser" method="get" class="search">
+        <input required type="text" placeholder="Search users" name="uName" class="form-control"/>
+        <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    <ul class="nav-links">
+      <li>
+        <a href="/addPoject"><i class="fa-solid fa-plus"></i></a>
+      </li>
+      <li>
+        <a href="/editProfile"><i class="fa-solid fa-user-gear"></i></a>
+      </li>
+      <li>
+        <a href="/logout"><i class="fa-solid fa-door-open"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <div class="containe">
+    <form class="new-project" action="/addPoject" method="post">
+      <h2 class="h2">New Project</h2>
+      <label>
+        Name
+        <input type="text" name="name" class="form-control w-100" required />
+      </label>
+      <label>
+        Description
+        <textarea name="description" cols="50" required rows="5" class="form-control"></textarea>
+      </label>
+      <button class="btn btn-primary w-100" type="submit">
+        Add new project
+      </button>
+      <a class="btn btn-commit commit w-100" href="/login">Cancel</a>
+    </form>
+  </div>
+  </body>
+</html>

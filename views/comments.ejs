@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <form action="/serarchUser" method="get" class="search">
+        <input required type="text" placeholder="Search users" name="uName" class="form-control"/>
+        <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <ul class="nav-links">
+        <li>
+          <a href="/addPoject"><i class="fa-solid fa-plus"></i></a>
+        </li>
+        <li>
+          <a href="/editProfile"><i class="fa-solid fa-user-gear"></i></a>
+        </li>
+        <li>
+          <a href="/logout"><i class="fa-solid fa-door-open"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container w-50" style="margin-top: 80px">
+      <form action="/addComment/<%= id %>" method="post" class="d-flex">
+        <input type="text" name="comment" class="form-control" style="margin-right: 5px;" placeholder="Add your comment">
+        <button class="btn btn-primary">add</button>
+      </form>
+      <div class="row">
+        <% comments.forEach((comments) => { %>
+        <div class="col-md-12 mt-2">
+          <div class="card">
+            <div class="card-header">
+              <p class="m-0"><%= comments.user %></p>
+            </div>
+            <div class="card-body">
+              <p class="m-0"><%= comments.comment %></p>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

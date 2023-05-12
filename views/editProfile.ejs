@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <div class="containe">
+      <i class="fa-solid fa-users icon"></i>
+    <form action="/editProfile" method="post">
+      <% rows.forEach(user => { %>
+      <label>Username
+        <input spellcheck="false" min="4" class="form-control my-1" required type="text" name="username" value="<%= user.username %>"/>
+      </label>
+      <label>Email
+        <input spellcheck="false" min="4" class="form-control my-1" required type="text" name="email" value="<%= user.email %>"/>
+      </label>
+      <label>Password
+        <input spellcheck="false" min="4" class="form-control my-1" required type="text" name="password" value="<%= user.password %>"/>
+      </label>
+      <div class="d-flex">
+        <button class="btn btn-primary button" type="submit" >
+          Update profile
+        </button>
+        <a class="btn btn-commit commit" href="/login">Cancel</a>
+        <button class="btn btn-delet delete" id="delete">Delete's account 
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+      <form action=""></form>
+      <%}); %>
+    </form>
+  </div>
+    <% rows.forEach(user => { %>
+    <script>
+      let deleteBtn = document.querySelector("#delete");
+      deleteBtn.addEventListener("click", () => {
+        if (confirm("Are you wont delete this account?")) {
+          location = "/deleteAccount/<%= user.id %>/<%= user.username %>";
+        }
+      });
+    </script>
+    <%}); %>
+  </body>
+</html>

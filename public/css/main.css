@@ -1,0 +1,129 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css");
+@import url("./bootstrap.min.css");
+* {
+  padding: 0;
+  margin: 0;
+}
+body{
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.containe{
+  padding: 20px;
+  text-align: center;
+  border: 3px solid blue;
+  border-radius: 20px;
+}
+.paragraph{
+  color: white; 
+  font-size: 30px; 
+}
+.icon{
+  margin-top: 20px;
+  font-size: 35vh; 
+  color: blue;
+}
+.header{
+  font-size: 5.5rem; 
+}
+.btn{
+  background-color: blue;
+  color: white; 
+  margin: 10px;
+  width: 100px;
+}
+.navbar {
+  padding: 10px 40px;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 9999;
+  background-color: grey; 
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+}
+.search{
+  display: flex;
+  align-items: center; 
+}
+.nav-links{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navb{
+  list-style-type: none;
+  text-align: center;
+  font-size: 1.5em;
+}
+nav > .nav-links > li {
+  padding: 0 15px;
+  list-style-type: none;
+}
+
+nav > .nav-links > li > a {
+  text-decoration: none;
+  color: #00f;
+  font-size: 25px;
+}
+/* .email{
+  color: white;
+  text-align: center;
+} */
+.card{
+  border-radius: 9px;
+  border: 1px solid black ;
+  padding: 10px;
+  box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+  margin: 20px;
+}
+.cart-header{
+  padding: 2px; 
+  background-color: grey;
+  color: white;
+  padding: 10px;
+}
+.gear{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+.card-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-commit{
+  border: 3px solid yellow;
+}
+.btn-commit:hover{
+  background-color: yellow;
+  color: white;
+}
+.commit{
+  width: 33%;
+}
+.btn-delet{
+  border: 3px solid red;
+}
+.btn-delet:hover{
+  background-color: red;
+  color: white;
+}
+.delete{
+  width: 33%;
+}
+.button{
+  width: 33%;
+}
+.new-project{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

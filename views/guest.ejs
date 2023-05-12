@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+      <nav class="navbar">
+        <form action="/serarchUser" method="get" class="search">
+          <input required type="text" placeholder="Search users" name="uName" class="form-control"/>
+          <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      <ul class="nav-links">
+        <li>
+          <a href="/addPoject"><i class="fa-solid fa-plus"></i></a>
+        </li>
+        <li>
+          <a href="/editProfile"><i class="fa-solid fa-user-gear"></i></a>
+        </li>
+        <li>
+          <a href="/logout"><i class="fa-solid fa-door-open"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="containe">
+    <% user.forEach(user => {%>
+    <nav>
+      <ul class="navb">
+        <li>
+          <a href="https://<%= user.email %>" target="_blank" class="email"><%= user.email %></a>
+        </li>
+      </ul>
+    </nav>
+      <div class="row">
+        <h2><%= user.username %>'s projects</h2>
+        <% }) %> <% if (projects) { projects.forEach(project => { %>
+        <div class="col-lg-6 col-md-4 col-sm-6">
+          <div class="card my-1">
+            <div class="cart-header rounded p-2 bg-dark text-light">
+              <div class="d-flex align-items-center justify-content-between">
+                <p class="m-0 text-center"><%= project.user %></p>
+                <p class="m-0 text-center"><%= project.id %></p>
+              </div>
+              <%= project.name %>
+            </div>
+            <div class="card-body">
+              <p class="m-0"><%= project.description %></p>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-primary w-100" href="/comments/<%= project.id %>"
+                >Show comments</a>
+            </div>
+          </div>
+        </div>
+        <%})} else { %>
+        <h2 class="text-center">has no project</h2>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

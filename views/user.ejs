@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+        <h2><%= rows[0].username %></h2>
+        <form action="/serarchUser" method="get" class="search">
+          <input required type="text" placeholder="Search users" name="uName" class="form-control"/>
+          <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      <ul class="nav-links">
+        <li>
+          <a href="/addPoject"><i class="fa-solid fa-plus"></i></a>
+        </li>
+        <li>
+          <a href="/editProfile"><i class="fa-solid fa-user-gear"></i></a>
+        </li>
+        <li>
+          <a href="/logout"><i class="fa-solid fa-door-open"></i></a>
+        </li>
+      </ul>
+    </nav>
+      <div class="container">
+        <div class="row">
+        <h2 class="text-center">Projects</h2>
+        <% projects.forEach(project => { %> <% rows.forEach(user => { %>
+        <div class="col-4 col-md-4">
+          <div class="card">
+            <div class="cart-header rounded">
+              <div class="gear">
+                <%= user.email %>
+                <a href="/projectSettings/<%= project.id %>"><i class="fa-solid fa-gear"></i></a>
+              </div>
+              <%= project.name %>
+            </div>
+            <div class="card-body">
+              <p><%= project.description %></p>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-commit" href="/comments/<%= project.id %>"><i class="fa-solid fa-comment"></i></a>
+              <a class="btn btn-delet" href="/deleteProject/<%= project.id %>"><i class="fa-solid fa-trash"></i></a>
+            </div>
+          </div>
+        </div>
+        <%}); %> <%}); %>
+      </div>
+    </div>
+  </body>
+</html>
